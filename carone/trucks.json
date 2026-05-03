@@ -1,0 +1,32 @@
+[
+  {
+    "name": "2019 Ford F-150 XLT",
+    "price": "$24,995",
+    "link": "https://www.caroneusa.net/inventory/ford/f-150/15876383-12345/",
+    "image_url": "https://imagescf.dealercenter.net/640/480/ford-f150-2019.jpg"
+  },
+  {
+    "name": "2021 Chevrolet Silverado 1500 Custom",
+    "price": "$32,500",
+    "link": "https://www.caroneusa.net/inventory/chevrolet/silverado-1500/15876383-67890/",
+    "image_url": "https://imagescf.dealercenter.net/640/480/chevy-silverado-2021.jpg"
+  },
+  {
+    "name": "2020 RAM 1500 Big Horn",
+    "price": "$29,900",
+    "link": "https://www.caroneusa.net/inventory/ram/1500/15876383-11223/",
+    "image_url": "https://imagescf.dealercenter.net/640/480/ram-1500-2020.jpg"
+  },
+  {
+    "name": "2018 Toyota Tacoma SR5",
+    "price": "$22,800",
+    "link": "https://www.caroneusa.net/inventory/toyota/tacoma/15876383-44556/",
+    "image_url": "https://imagescf.dealercenter.net/640/480/toyota-tacoma-2018.jpg"
+  },
+  {
+    "name": "2022 GMC Sierra 1500 SLE",
+    "price": "$38,750",
+    "link": "https://www.caroneusa.net/inventory/gmc/sierra-1500/15876383-77889/",
+    "image_url": "https://imagescf.dealercenter.net/640/480/gmc-sierra-2022.jpg"
+  }
+]
