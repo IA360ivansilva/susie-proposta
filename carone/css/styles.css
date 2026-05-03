@@ -72,6 +72,12 @@ nav ul li a {
     color: var(--primary) !important;
 }
 
+.flag {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
 .hero {
     height: 60vh;
     background: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
@@ -194,4 +200,30 @@ footer {
     margin-top: 1rem;
     font-size: 0.8rem;
     color: var(--gray);
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
 }
