@@ -12,7 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 truckCard.className = 'truck-card';
                 
                 truckCard.innerHTML = `
-                    <img src="${truck.image_url}" alt="${truck.name}" class="truck-image" onerror="this.src='https://via.placeholder.com/640x480?text=Truck+Image'">
+                    <div class="truck-img-container">
+                        <img src="${truck.image_url}" alt="${truck.name}" class="truck-image" referrerpolicy="no-referrer" onerror="this.src='https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&q=80&w=640'">
+                    </div>
                     <div class="truck-info">
                         <h3 class="truck-name">${truck.name}</h3>
                         <p class="truck-price">${truck.price}</p>
