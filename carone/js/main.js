@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const truckGrid = document.getElementById('truck-grid');
 
     // Load inventory from JSON
-    fetch('./trucks.json')
+    fetch('./trucks.json?v=1.0.1')
         .then(response => response.json())
         .then(data => {
             truckGrid.innerHTML = ''; // Clear loading message
