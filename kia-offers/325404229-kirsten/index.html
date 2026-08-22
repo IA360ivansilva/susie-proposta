@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ivan Silva · Phil Smith Kia</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--red:#c60f0f;--green:#4ade80;--blue:#2563eb;--dark:#0a0e17;--card:#111827;--muted:#8b96ab;--border:#1f2937}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',system-ui,sans-serif;background:var(--dark);color:#fff;line-height:1.5;overflow-x:hidden}
+.wrap{max-width:480px;margin:0 auto;padding-bottom:100px}
+.hero{padding:28px 20px 20px;border-bottom:1px solid var(--border)}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;letter-spacing:.8px;color:#60a5fa;margin-bottom:10px}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:#60a5fa}
+.hero h1{font-size:24px;font-weight:800;line-height:1.2;margin-bottom:6px}
+.hero h1 b{color:var(--green)}
+.hero p{color:var(--muted);font-size:14px;margin-bottom:14px}
+.play{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:10px 12px;cursor:pointer;transition:.15s}
+.play:hover{background:rgba(255,255,255,.08)}
+.play .ic{width:36px;height:36px;border-radius:50%;background:var(--red);display:grid;place-items:center;font-size:13px;flex:0 0 36px}
+.play .t{font-size:13px;font-weight:600}
+.play .t small{display:block;color:var(--muted);font-weight:400;font-size:11px;margin-top:1px}
+audio{width:100%;margin-top:8px;height:32px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin:14px 16px}
+.card h3{font-size:15px;font-weight:700;margin-bottom:4px}
+.card .meta{color:var(--muted);font-size:12px;margin-bottom:12px}
+.card .grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.kv{background:rgba(255,255,255,.03);border-radius:8px;padding:10px}
+.kv .k{font-size:9px;letter-spacing:.6px;color:var(--muted);font-weight:700;text-transform:uppercase}
+.kv .v{font-size:16px;font-weight:800;margin-top:2px}
+.kv.green{background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25)}
+.kv.green .v{color:var(--green)}
+.offer{border:1.5px solid var(--red);border-radius:14px;padding:18px;margin:14px 16px;position:relative;background:#1a0f0f}
+.offer .tag{position:absolute;top:-10px;left:16px;background:var(--red);font-size:9px;font-weight:800;letter-spacing:.5px;padding:3px 10px;border-radius:10px}
+.offer h4{font-size:15px;font-weight:700;margin-bottom:2px}
+.offer .sm{color:var(--muted);font-size:12px;margin-bottom:12px}
+.pays{display:flex;align-items:baseline;gap:8px}
+.pays .now{font-size:38px;font-weight:900;letter-spacing:-1.5px;line-height:1}
+.pays .per{color:var(--muted);font-size:13px;padding-bottom:4px}
+.pays .old{color:var(--muted);text-decoration:line-through;font-size:16px;padding-bottom:5px}
+.save{display:inline-block;background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.4);color:var(--green);font-size:11px;font-weight:700;padding:5px 10px;border-radius:8px;margin-top:8px}
+.apr{border:1.5px solid var(--blue);border-radius:14px;padding:18px;margin:14px 16px;background:#0d2137}
+.apr h4{font-size:14px;font-weight:700;color:#60a5fa;margin-bottom:8px}
+.apr p{color:#c7d0dd;font-size:13px;line-height:1.6}
+.apr b{color:#fff}
+.tot{text-align:center;padding:16px 20px}
+.tot .k{font-size:10px;letter-spacing:1px;color:var(--muted);font-weight:700}
+.tot .v{font-size:32px;font-weight:900;color:var(--green);margin:4px 0 2px}
+.tot .n{font-size:11px;color:var(--muted)}
+.times{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px;margin-top:8px}
+.slot{background:var(--card);border:1.5px solid var(--border);border-radius:10px;padding:12px;text-align:center;cursor:pointer;transition:.15s}
+.slot:hover,.slot.on{border-color:var(--red);background:#1a0f0f}
+.slot .d{font-size:10px;color:var(--muted);letter-spacing:.3px}
+.slot .t{font-size:15px;font-weight:800;margin-top:2px}
+.me{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin:16px}
+.me .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--red),#5a0808);display:grid;place-items:center;font-weight:800;font-size:14px;flex:0 0 40px}
+.me .n{font-size:14px;font-weight:700}
+.me .r{font-size:11px;color:var(--muted);margin-top:1px}
+.me .ai{font-size:10px;color:#5f6b80;margin-top:5px;line-height:1.4}
+.cta{position:fixed;bottom:0;left:0;right:0;background:rgba(10,14,23,.97);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:10px 14px;z-index:50}
+.cta .in{max-width:480px;margin:0 auto;display:flex;gap:8px}
+.b{flex:1;padding:14px;border-radius:10px;border:none;font-size:13px;font-weight:700;text-align:center;text-decoration:none;cursor:pointer}
+.b1{background:var(--red);color:#fff}
+.b2{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12);flex:0 0 100px}
+.ftr{padding:20px 20px 24px;border-top:1px solid var(--border);color:#5f6b80;font-size:10px;line-height:1.6;margin-top:16px;text-align:center}
+.ftr .ai{color:#60a5fa;margin-bottom:6px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hero">
+  <div class="badge"><span class="dot"></span> IVAN'S AI ASSISTANT · AUG 2026</div>
+  <h1>KIRSTEN, your <b> </b> may be worth more than you owe.</h1>
+  <p>Our system estimates around <b style="color:#4ade80">$<span id="eqNum">23,435</span> in equity</b> — but only a certified appraiser can give you the real number.</p>
+  <div class="play" onclick="document.getElementById('au').play()">
+    <div class="ic">▶</div>
+    <div class="t">Your numbers in 30 sec<small>Phil Smith Kia · Ivan Silva</small></div>
+  </div>
+  <audio id="au" controls preload="none"><source src="pitch.mp3" type="audio/mpeg"></audio>
+</div>
+
+<div class="apr">
+  <h4>STEP 1 — FREE APPRAISAL (20 MIN)</h4>
+  <p>The <b>$23,435</b> above is a market estimate. Your real number depends on condition, tires, service history and today's live market — things only a person can check.</p>
+  <p style="margin-top:8px">Bring your car in and one of our <b>certified appraisal specialists</b> will inspect it and give you the strongest number the market allows. No obligation, no pressure. If you don't like the number, you keep your car.</p>
+</div>
+
+<div class="card">
+  <h3>2023 Kia Telluride</h3>
+  <div class="meta"> · 0 mi · 0 MPG · 0 payments left</div>
+  <div class="grid">
+    <div class="kv"><div class="k">EST. TRADE</div><div class="v">$23,435</div></div>
+    <div class="kv"><div class="k">PAYOFF</div><div class="v">$0</div></div>
+    <div class="kv green"><div class="k">EST. EQUITY</div><div class="v">$23,435</div></div>
+    <div class="kv"><div class="k">PAYING NOW</div><div class="v">$0<span style="font-size:11px;color:var(--muted)">/mo</span></div></div>
+  </div>
+</div>
+
+<div class="offer">
+  <div class="tag">STEP 2 — ESTIMATED PAYMENT</div>
+  <h4>2027 Kia Telluride — Brand New</h4>
+  <div class="sm">Retail · 72 months · APR 4.99% · Price $54,835</div>
+  <div class="pays">
+    <div class="now">$676</div>
+    <div class="per">/mo*</div>
+    <div class="old">$0</div>
+  </div>
+  <div class="save">↓ ~$0 less per month</div>
+</div>
+
+<div class="tot">
+  <div class="k">BACK IN YOUR POCKET</div>
+  <div class="v">~$<span id="totalSave">0</span><span style="font-size:16px;color:var(--muted)">/mo</span></div>
+  <div class="n">estimated savings — final number after appraisal</div>
+</div>
+
+<div style="padding:0 16px;margin-top:10px">
+  <div style="font-size:10px;letter-spacing:.8px;color:var(--muted);font-weight:700;margin-bottom:8px">BOOK YOUR APPRAISAL</div>
+</div>
+<div class="times">
+  <div class="slot" onclick="pick(this,'Today 5:30 PM')"><div class="d">TODAY · THU</div><div class="t">5:30 PM</div></div>
+  <div class="slot" onclick="pick(this,'Tomorrow 11:00 AM')"><div class="d">TOMORROW · FRI</div><div class="t">11:00 AM</div></div>
+  <div class="slot" onclick="pick(this,'Tomorrow 2:00 PM')"><div class="d">TOMORROW · FRI</div><div class="t">2:00 PM</div></div>
+  <div class="slot" onclick="pick(this,'Saturday 10:00 AM')"><div class="d">SATURDAY</div><div class="t">10:00 AM</div></div>
+</div>
+
+<div class="me">
+  <div class="av">IS</div>
+  <div>
+    <div class="n">Ivan Silva</div>
+    <div class="r">Sales · Phil Smith Kia · (954) 860-0537</div>
+    <div class="ai">This page was prepared by my AI assistant — but you'll be dealing with me in person.</div>
+  </div>
+</div>
+
+<div class="ftr">
+  <div class="ai">🤖 This page and audio were generated by Ivan's AI assistant using an AI-synthesized voice.</div>
+  Phil Smith Kia · 4250 N Federal Hwy, Lighthouse Point, FL 33064<br>
+  Ivan Silva · (954) 860-0537<br><br>
+  All figures on this page are <b>estimates</b> based on market data and are not an offer or a guaranteed value. The actual trade-in value is determined only after a physical appraisal by a Phil Smith Kia appraisal specialist and depends on the vehicle's condition, mileage, options, history and current market demand. Payment estimates are subject to final trade value, applicable taxes, tag, title and dealer fees, and lender program availability. Vehicle availability subject to change. This is not a commitment to lend.
+</div>
+</div>
+
+<div class="cta">
+  <div class="in">
+    <a class="b b1" href="sms:+19548600537?&body=Ivan%2C%20I%20want%20to%20book%20my%20appraisal">Book My Appraisal</a>
+    <a class="b b2" href="tel:+19548600537">Call Ivan</a>
+  </div>
+</div>
+
+<script>
+function pick(el,t){
+  document.querySelectorAll('.slot').forEach(s=>s.classList.remove('on'));
+  el.classList.add('on');
+  var b=document.querySelector('.b1');
+  b.textContent='Confirm '+t;
+  b.href='sms:+19548600537?&body='+encodeURIComponent('Ivan, book me for '+t);
+}
+</script>
+</body>
+</html>
